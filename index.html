@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<title>JoyaGoo spreadsheet – dansk guide til fund, mål og billedkontrol</title>
+<meta name="description" content="Brug en JoyaGoo spreadsheet med omtanke. Dansk guide til sneakers, tøj, størrelser, QC-billeder og samlet budget. Find kategorier hos Hipobuyfind.">
+<meta name="theme-color" content="#293e49">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="da_DK">
+<meta property="og:title" content="JoyaGoo spreadsheet – find din stil med en bedre tjekliste">
+<meta property="og:description" content="Fra første fund til en velovervejet ønskeliste: kategorier, pasform, billedkontrol og budget forklaret på dansk.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+<meta property="og:image:alt" content="Rød Nike-sneaker på rød baggrund">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://images.unsplash.com">
+<style>
+:root{--paper:#f6f3eb;--ink:#253b46;--muted:#50616a;--line:#d5d8d0;--yellow:#f2d76a;--white:#fffef9;--blue:#dfe9ed}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:inherit;text-underline-offset:4px}
+a:hover{text-decoration-thickness:2px}
+a:focus-visible,summary:focus-visible{outline:3px solid #945115;outline-offset:5px}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3,p,figure{margin:0}
+h1,h2,h3{line-height:1.12;letter-spacing:-.035em}
+h1{font-size:clamp(2.7rem,6.4vw,5.6rem);max-width:850px}
+h2{font-size:clamp(1.9rem,3.8vw,3rem)}
+h3{font-size:1.35rem}
+p+p{margin-top:14px}
+.wrap{width:min(1200px,calc(100% - 40px));margin:auto}
+.top{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0;border-bottom:1px solid var(--line)}
+.logo{font-size:1.25rem;font-weight:850;text-decoration:none;letter-spacing:-.04em}
+.label{font-size:.73rem;text-transform:uppercase;letter-spacing:.16em;font-weight:750}
+.edition{color:var(--muted);font-size:.8rem}
+.intro{padding:48px 0 28px}
+.intro .label{display:block;margin-bottom:20px}
+.lead{max-width:760px;font-size:1.1rem;margin-top:24px;color:var(--muted)}
+.categories{padding:24px;background:var(--white);border:1px solid var(--line);border-radius:16px;margin-bottom:32px}
+.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:20px;margin-bottom:22px}
+.categories h2{font-size:1.1rem;letter-spacing:0}
+.cat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.cat-grid a{padding:14px 10px;background:var(--paper);border-radius:8px;text-decoration:none;font-size:.9rem;font-weight:650;display:flex;flex-direction:column;gap:4px}
+.cat-grid a:hover{background:var(--yellow)}
+.cat-grid small{color:var(--muted);font-size:.72rem;font-weight:400}
+.hero{display:grid;grid-template-columns:1.15fr 1fr;background:var(--ink);color:var(--white);border-radius:18px;overflow:hidden}
+.hero figure{height:100%;min-height:390px;position:relative}
+.hero img{width:100%;height:100%;object-fit:cover}
+.hero figcaption{position:absolute;bottom:16px;left:16px;font-size:.72rem;background:#172c37e8;padding:6px 12px;border-radius:6px}
+.hero-copy{padding:40px;align-self:center}
+.hero-copy h2{margin:16px 0}
+.hero-copy p{color:#d8e1e5}
+.button{display:inline-flex;align-items:center;gap:20px;padding:13px 19px;background:var(--yellow);color:var(--ink);text-decoration:none;font-weight:750;border-radius:7px;margin-top:25px}
+.button:hover{background:#ffe994}
+.note{font-size:.83rem;color:var(--muted);margin:16px 0 0}
+.block{padding:64px 0;border-bottom:1px solid var(--line)}
+.answer{display:grid;grid-template-columns:.75fr 1.25fr;gap:50px}
+.answer p{max-width:720px}
+.answer .label{display:block;margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chips span{font-size:.78rem;padding:5px 10px;border:1px solid var(--line);border-radius:20px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:28px}
+.step{border-top:3px solid var(--ink);padding-top:18px}
+.step b{font-size:.8rem;color:var(--muted);display:block;margin-bottom:12px}
+.step p{margin-top:14px;font-size:.95rem}
+.journal{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:28px}
+.article{background:var(--white);padding:28px;border:1px solid var(--line);border-radius:12px}
+.article .label{color:var(--muted);display:block;margin-bottom:14px}
+.article h3{margin-bottom:16px}
+.article p{font-size:.95rem}
+.article ul{padding-left:21px;font-size:.92rem;margin-bottom:0}
+.article li+li{margin-top:8px}
+.inspiration{display:grid;grid-template-columns:1fr 1.1fr;gap:36px;align-items:center}
+.inspiration figure{background:#e7e8e5;border-radius:14px;overflow:hidden}
+.inspiration img{width:100%;aspect-ratio:1/1;object-fit:contain}
+.inspiration figcaption{padding:14px 20px;font-size:.8rem;background:var(--white)}
+.inspiration p{margin-top:20px}
+.table-wrap{overflow-x:auto;margin-top:25px}
+table{width:100%;border-collapse:collapse;text-align:left;font-size:.94rem}
+th,td{padding:17px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--blue);font-weight:750}
+td:first-child{font-weight:700;min-width:130px}
+details{border-bottom:1px solid var(--line);padding:20px 0}
+summary{cursor:pointer;font-weight:750;padding-right:12px}
+details p{padding-top:14px;max-width:900px;color:var(--muted)}
+.closing{margin:48px 0;background:var(--yellow);padding:34px;border-radius:14px;display:flex;justify-content:space-between;gap:25px;align-items:center}
+.closing h2{font-size:1.8rem}
+.closing p{margin-top:10px;max-width:680px}
+.closing .button{margin:0;background:var(--ink);color:var(--white);white-space:nowrap}
+footer{padding:0 0 32px;color:var(--muted);font-size:.8rem}
+footer p{max-width:900px}
+.footer-line{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:22px;margin-top:24px}
+@media(min-width:760px){
+.journal,.table-wrap,details{content-visibility:auto;contain-intrinsic-size:auto 220px}
+}
+@media(max-width:850px){
+.cat-grid{grid-template-columns:repeat(3,1fr)}
+.hero-copy{padding:28px}
+.hero figure{min-height:340px}
+.answer{gap:25px}
+.closing{display:block}
+.closing .button{margin-top:22px}
+}
+@media(max-width:600px){
+body{font-size:16px}
+.wrap{width:calc(100% - 28px)}
+.edition{max-width:120px;text-align:right}
+.intro{padding-top:34px}
+.cat-grid{grid-template-columns:1fr 1fr}
+.categories{padding:17px}
+.hero,.answer,.steps,.journal,.inspiration{grid-template-columns:1fr}
+.hero figure{min-height:0;height:auto}
+.hero img{aspect-ratio:4/3}
+.hero-copy{padding:26px}
+.block{padding:42px 0}
+.section-head{display:block}
+.section-head .label{display:block;margin-top:12px}
+.article{padding:23px}
+.closing{padding:25px}
+.footer-line{flex-direction:column;gap:8px}
+}
+@media(prefers-reduced-motion:no-preference){
+.cat-grid a,.button{transition:background .15s ease}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"WebPage",
+      "name":"JoyaGoo spreadsheet – dansk guide til fund, mål og billedkontrol",
+      "inLanguage":"da",
+      "description":"En uafhængig dansk guide til at sammenligne modefund, kontrollere størrelser og gennemgå produktbilleder.",
+      "about":{"@type":"Thing","name":"JoyaGoo spreadsheet"}
+    },
+    {
+      "@type":"Article",
+      "headline":"Sneakers: begynd med foden, ikke størrelsesmærket",
+      "inLanguage":"da",
+      "description":"Sammenlign fodlængde, indvendige mål og modeloplysninger, før du vælger størrelse."
+    },
+    {
+      "@type":"Article",
+      "headline":"Tøj: mål et stykke, du allerede bruger",
+      "inLanguage":"da",
+      "description":"Sammenlign brystvidde, skulderbredde, længde og taljemål med tøj, der passer dig."
+    },
+    {
+      "@type":"Article",
+      "headline":"QC-billeder: se efter det, billedet faktisk viser",
+      "inLanguage":"da",
+      "description":"Skeln mellem sælgerbilleder, lagerbilleder og fotos af den konkrete vare."
+    },
+    {
+      "@type":"Article",
+      "headline":"Budget: få alle poster med fra begyndelsen",
+      "inLanguage":"da",
+      "description":"Lav en ønskeliste med varepris, fragt, gebyrer og eventuelle importomkostninger."
+    },
+    {
+      "@type":"FAQPage",
+      "inLanguage":"da",
+      "mainEntity":[
+        {
+          "@type":"Question",
+          "name":"Hvad er en JoyaGoo spreadsheet?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Det er en produktoversigt med links og oplysninger, som bruges til at finde varer med henblik på køb gennem JoyaGoo. Oversigtens indhold og kvalitet afhænger af den, der vedligeholder den."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Kan jeg bestille direkte på denne side?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Nej. Dette er en dansk guide. Kategorilinks åbner de angivne kategorier hos Hipobuyfind; øvrige links åbner Hipobuyfinds forside. Kontrollér den faktiske købsmulighed på destinationssiden."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Beviser QC-billeder, at en vare er ægte?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Nej. QC-billeder kan hjælpe med at vurdere synlige detaljer og mål, men er ikke i sig selv dokumentation for ægthed, materialer eller holdbarhed."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Hvordan vælger jeg størrelse?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Mål din fod eller et stykke tøj, der passer. Sammenlign med den konkrete models målskema og kontrollér, om målene gælder kroppen eller selve varen."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Hvad gør jeg, hvis et produktlink ikke virker?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Find produktets oprindelige kilde og varenummer, og søg efter den samme vare igen. Kontrollér sælger og variant; et lignende billede er ikke nok til at bekræfte et match."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Er siden officiel eller knyttet til de viste mærker?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Nej. Guiden er uafhængig og repræsenterer hverken JoyaGoo, Nike, Gucci eller andre nævnte mærker. Inspirationsbilleder dokumenterer ikke sortiment eller tilgængelighed hos Hipobuyfind."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/gkbdr/">
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <a class="logo" href="https://www.hipobuyfind.com">hipobuyfind.com</a>
+  <span class="edition">Dansk stilnotat<br>Fund · pasform · overblik</span>
+</header>
+
+<main>
+<section class="intro" aria-labelledby="page-title">
+  <span class="label">Den velovervejede ønskeliste / 01</span>
+  <h1 id="page-title">JoyaGoo spreadsheet.<br>Mere blik for detaljen.</h1>
+  <p class="lead">Et godt fund begynder med et overblik. Brug denne danske guide til at sammenligne sneakers, tøj og accessories ud fra mål, billeder og dine egne behov — før du beslutter dig.</p>
+</section>
+
+<nav class="categories" aria-label="Produktkategorier hos Hipobuyfind">
+  <div class="section-head">
+    <h2>Vælg først din kategori</h2>
+    <span class="label">Åbner hos Hipobuyfind ↗</span>
+  </div>
+  <div class="cat-grid">
+    <a href="https://hipobuyfind.com/category-911-Shoes.html">Sko <small>Sneakers og andre sko</small></a>
+    <a href="https://hipobuyfind.com/category-912-Hoodies%2FSweaters.html">Hættetrøjer og strik <small>Lag til hverdagen</small></a>
+    <a href="https://hipobuyfind.com/category-913-T-Shirts.html">T-shirts <small>Snit og basisdele</small></a>
+    <a href="https://hipobuyfind.com/category-914-Jackets.html">Jakker <small>Form og funktion</small></a>
+    <a href="https://hipobuyfind.com/category-915-Pants%2FShorts.html">Bukser og shorts <small>Talje og benlængde</small></a>
+    <a href="https://hipobuyfind.com/category-916-Headwear.html">Hovedbeklædning <small>Kasketter og huer</small></a>
+    <a href="https://hipobuyfind.com/category-917-Sets.html">Sæt <small>Overdel og underdel</small></a>
+    <a href="https://hipobuyfind.com/category-918-underwear%2Funderpants.html">Undertøj <small>Komfort og pasform</small></a>
+    <a href="https://hipobuyfind.com/category-919-Jersey.html">Sportstrøjer <small>Snit og detaljer</small></a>
+    <a href="https://hipobuyfind.com/category-920-Accessories.html">Accessories <small>Små detaljer</small></a>
+  </div>
+</nav>
+
+<section class="hero" aria-labelledby="hero-title">
+  <figure>
+    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+         width="900" height="675"
+         alt="Rød Nike-sneaker med hvidt Swoosh-logo på rød baggrund"
+         fetchpriority="high" loading="eager" decoding="async">
+    <figcaption>Nike · inspirationsfoto af Ryan Waring / Unsplash</figcaption>
+  </figure>
+  <div class="hero-copy">
+    <span class="label">Form, farve og pasform</span>
+    <h2 id="hero-title">Vælg ét fokus.<br>Se bedre efter.</h2>
+    <p>Begynd med en kategori og en anvendelse: sko til hverdagen, en rummelig hættetrøje eller en kompakt accessory. Sammenlign derefter et lille udvalg med de samme kriterier.</p>
+    <a class="button" href="https://www.hipobuyfind.com">Udforsk Hipobuyfind <span aria-hidden="true">↗</span></a>
+  </div>
+</section>
+
+<p class="note">Uafhængig guide. Inspirationsfotos er ikke produktannoncer eller bevis for tilgængelighed. Links herfra fører til Hipobuyfind, ikke direkte til JoyaGoo.</p>
+
+<section class="block answer" aria-labelledby="definition-title">
+  <div>
+    <span class="label">Det korte svar</span>
+    <h2 id="definition-title">Hvad er en JoyaGoo spreadsheet?</h2>
+  </div>
+  <div>
+    <p>Det er en produktoversigt med links og oplysninger, som bruges til at finde varer med henblik på køb gennem JoyaGoo. Oversigtens indhold og kvalitet afhænger af den, der vedligeholder den.</p>
+    <p>En oversigt er et udgangspunkt for research. Kontrollér altid varen hos den aktuelle sælger: samme produktnummer, korrekt variant, forståeligt målskema og betingelser, du kan acceptere.</p>
+    <div class="chips" aria-label="Guidens fire hovedemner">
+      <span>JoyaGoo produktfund</span>
+      <span>JoyaGoo størrelsesguide</span>
+      <span>JoyaGoo QC-billeder</span>
+      <span>JoyaGoo købsguide</span>
+    </div>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="method-title">
+  <div class="section-head">
+    <h2 id="method-title">Fra inspiration til kortliste</h2>
+    <span class="label">Tre enkle valg</span>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <b>01 / BEHOV</b>
+      <h3>Beskriv det, du mangler</h3>
+      <p>Vil du finde sneakers til hverdagsbrug, en hættetrøje med løs pasform eller en jakke til lag på lag? Skriv anvendelse, farve og mål ned, før du søger.</p>
+    </div>
+    <div class="step">
+      <b>02 / SAMMENLIGNING</b>
+      <h3>Brug de samme felter</h3>
+      <p>Notér kilde, variant og mål for hvert fund. En JoyaGoo ønskeliste med produktnumre gør det lettere at opdage dubletter og genfinde den rigtige vare.</p>
+    </div>
+    <div class="step">
+      <b>03 / BESLUTNING</b>
+      <h3>Afklar det, der mangler</h3>
+      <p>Gem kun varer, hvor du kan afklare størrelse, billedgrundlag og samlet budget. Manglende information er en grund til at undersøge videre.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="journal-title">
+  <div class="section-head">
+    <h2 id="journal-title">Fire små guider til bedre valg</h2>
+    <span class="label">Læs før du vælger</span>
+  </div>
+
+  <div class="journal">
+    <article class="article">
+      <span class="label">Guide 01 · sko</span>
+      <h3>Sneakers: begynd med foden, ikke størrelsesmærket</h3>
+      <p>Til en JoyaGoo størrelsesguide for sneakers er din fodlængde et nyttigt udgangspunkt. Mål begge fødder stående, og sammenlign med den konkrete models vejledning. EU-størrelsen alene fortæller ikke alt om bredden eller pladsen ved tæerne.</p>
+      <ul>
+        <li>Ved sammenligning af sneakers efter fodlængde: skeln mellem fodmål og indvendigt skomål.</li>
+        <li>Ved valg af skostørrelse mellem to størrelser: bed om modeloplysninger frem for at gætte.</li>
+        <li>Ved kontrol af sneakers på billeder: se på begge sko, såler og samlinger.</li>
+      </ul>
+    </article>
+
+    <article class="article">
+      <span class="label">Guide 02 · garderobe</span>
+      <h3>Tøj: mål et stykke, du allerede bruger</h3>
+      <p>En JoyaGoo guide til tøjstørrelser bliver mere brugbar, når du tager udgangspunkt i en overdel eller underdel, du faktisk kan lide. Læg tøjet fladt, og brug samme målemetode som sælgerens skema.</p>
+      <ul>
+        <li>Til hættetrøjer efter brystmål og T-shirts efter skulderbredde: sammenlign også længden.</li>
+        <li>Til bukser efter taljemål og shorts efter benlængde: kontrollér målepunkt og elastik.</li>
+        <li>Ved valg af størrelse i sportstrøjer og sæt med forskellig over- og underdel: vurder delene hver for sig.</li>
+      </ul>
+    </article>
+
+    <article class="article">
+      <span class="label">Guide 03 · billedkontrol</span>
+      <h3>QC-billeder: se efter det, billedet faktisk viser</h3>
+      <p>En JoyaGoo QC-tjekliste bør begynde med billedets oprindelse. Sælgerbilleder viser en præsentation af produktet. Fotos af den konkrete vare kan vise flere detaljer, men kun hvis du kan forbinde dem med din variant.</p>
+      <ul>
+        <li>Ved forskellen på sælgerfotos og QC-fotos: kontrollér kilde og produktnummer.</li>
+        <li>Til kontrol af syninger på tøj og kontrol af lynlåse på jakker: bed om skarpe nærbilleder.</li>
+        <li>Til sammenligning af farver på produktbilleder: husk, at lys og skærm påvirker gengivelsen.</li>
+      </ul>
+    </article>
+
+    <article class="article">
+      <span class="label">Guide 04 · budget</span>
+      <h3>Budget: få alle poster med fra begyndelsen</h3>
+      <p>En JoyaGoo budgetoversigt bør rumme mere end vareprisen. Notér fragt, betalingsomkostninger og eventuelle importomkostninger særskilt. Brug aktuelle beløb fra den relevante udbyder; denne side viser ingen tilbud eller fragtløfter.</p>
+      <ul>
+        <li>Ved samlet pris med fragt og gebyrer: hold kendte beløb og skøn adskilt.</li>
+        <li>Til omregning fra CNY til DKK: notér kursens dato og eventuelt valutagebyr.</li>
+        <li>Til en ønskeliste før international bestilling: undersøg returvilkår og aktuelle importregler for destinationen.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="block inspiration" aria-labelledby="detail-title">
+  <div>
+    <span class="label">Detaljen gør forskellen</span>
+    <h2 id="detail-title">Se på proportioner.<br>Spørg til materialet.</h2>
+    <p>Et Gucci-billede kan inspirere til farver, form og detaljer. Det fortæller ikke, hvad en anden sælger faktisk leverer. Brug billeder som et visuelt udgangspunkt og kontrollér den konkrete varebeskrivelse.</p>
+    <p>Ved sammenligning af taskers mål skal der være plads til dine egne ting. Til valg af accessories efter materiale er materialespecifikationen vigtigere end en blank overflade på et foto. Kontrollér også omkreds ved valg af kasketstørrelse og mål ved valg af ringstørrelse.</p>
+    <a class="button" href="https://www.hipobuyfind.com">Se flere stilidéer <span aria-hidden="true">↗</span></a>
+  </div>
+  <figure>
+    <img src="https://media.gucci.com/style/DarkGray_South_0_160_540x540/1449742525/421889_C8U1T_2079_001_070_0000_Light-Bolso-de-hombro-de-piel-GG-Marmont.jpg"
+         alt="Brun Gucci-skuldertaske med grøn og rød stribe, guldfarvet GG-logo og kæderem"
+         width="540" height="540" loading="lazy" decoding="async">
+    <figcaption>Gucci · visuel inspiration. Foto: Gucci. Ingen oplysning om lagerstatus eller salg.</figcaption>
+  </figure>
+</section>
+
+<section class="block" aria-labelledby="check-title">
+  <h2 id="check-title">En kort tjekliste til din sammenligning</h2>
+  <div class="table-wrap">
+    <table>
+      <caption class="note">Brug de samme kontrolpunkter for hvert produktfund.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Område</th>
+          <th scope="col">Det skal du kontrollere</th>
+          <th scope="col">Det skal du afklare</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Identitet</td>
+          <td>Oprindelig kilde, sælger og produktnummer</td>
+          <td>Er det præcis den variant, du har gemt?</td>
+        </tr>
+        <tr>
+          <td>Pasform</td>
+          <td>Målskema og målemetode</td>
+          <td>Gælder tallene kroppen eller selve varen?</td>
+        </tr>
+        <tr>
+          <td>Billeder</td>
+          <td>Oprindelse, detaljer og billedkvalitet</td>
+          <td>Viser billederne din konkrete vare?</td>
+        </tr>
+        <tr>
+          <td>Økonomi</td>
+          <td>Varepris, fragt og øvrige omkostninger</td>
+          <td>Hvilke poster mangler endnu en aktuel pris?</td>
+        </tr>
+        <tr>
+          <td>Vilkår</td>
+          <td>Levering, returnering og dokumentation</td>
+          <td>Hvem håndterer spørgsmål efter købet?</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="faq-title">
+  <div class="section-head">
+    <h2 id="faq-title">Spørgsmål med korte svar</h2>
+    <span class="label">JoyaGoo spreadsheet · ofte spurgt</span>
+  </div>
+
+  <details open>
+    <summary>Hvad er en JoyaGoo spreadsheet?</summary>
+    <p>Det er en produktoversigt med links og oplysninger, som bruges til at finde varer med henblik på køb gennem JoyaGoo. Oversigtens indhold og kvalitet afhænger af den, der vedligeholder den.</p>
+  </details>
+
+  <details>
+    <summary>Kan jeg bestille direkte på denne side?</summary>
+    <p>Nej. Dette er en dansk guide. Kategorilinks åbner de angivne kategorier hos Hipobuyfind; øvrige links åbner Hipobuyfinds forside. Kontrollér den faktiske købsmulighed på destinationssiden.</p>
+  </details>
+
+  <details>
+    <summary>Beviser QC-billeder, at en vare er ægte?</summary>
+    <p>Nej. QC-billeder kan hjælpe med at vurdere synlige detaljer og mål, men er ikke i sig selv dokumentation for ægthed, materialer eller holdbarhed.</p>
+  </details>
+
+  <details>
+    <summary>Hvordan vælger jeg størrelse?</summary>
+    <p>Mål din fod eller et stykke tøj, der passer. Sammenlign med den konkrete models målskema og kontrollér, om målene gælder kroppen eller selve varen.</p>
+  </details>
+
+  <details>
+    <summary>Hvad gør jeg, hvis et produktlink ikke virker?</summary>
+    <p>Find produktets oprindelige kilde og varenummer, og søg efter den samme vare igen. Kontrollér sælger og variant; et lignende billede er ikke nok til at bekræfte et match.</p>
+  </details>
+
+  <details>
+    <summary>Er siden officiel eller knyttet til de viste mærker?</summary>
+    <p>Nej. Guiden er uafhængig og repræsenterer hverken JoyaGoo, Nike, Gucci eller andre nævnte mærker. Inspirationsbilleder dokumenterer ikke sortiment eller tilgængelighed hos Hipobuyfind.</p>
+  </details>
+</section>
+
+<aside class="closing" aria-labelledby="closing-title">
+  <div>
+    <h2 id="closing-title">Tag dine mål med videre.</h2>
+    <p>En lille kortliste med gode oplysninger er lettere at vurdere. Åbn Hipobuyfind, og undersøg de varer, der passer til dine behov.</p>
+  </div>
+  <a class="button" href="https://www.hipobuyfind.com">Åbn Hipobuyfind ↗</a>
+</aside>
+</main>
+
+<footer>
+  <p>Redaktionel inspirationsguide på dansk. Varemærker tilhører deres respektive ejere. Der vises ingen verificerede priser, anmeldelser eller garantier for ægthed. Undersøg altid sælger, vare og betingelser før køb.</p>
+  <div class="footer-line">
+    <span>© 2026 · Dansk guide til modefund</span>
+    <a href="https://www.hipobuyfind.com">hipobuyfind.com ↗</a>
+  </div>
+</footer>
+</div>
+<!--
+Filnavn: index.html.
+Research: Søgeresultater og ti resultatadresser blev undersøgt.
+Nogle sider kunne ikke hentes. Direkte adgang til Googles resultatside
+var ikke tilgængelig; en placering på Googles første side er ikke bekræftet.
+Teksten er selvstændigt formuleret på dansk.
+-->
+</body>
+</html>
